@@ -11,26 +11,22 @@ public class AddressBook {
         if (buddy != null) {
             buddies.add(buddy);
         }
-
-
-
-
-
-
-
-
-
-
-
     }
 
-    public void removeBuddy(BuddyInfo buddy){
-        buddies.remove(buddy);
+    public BuddyInfo removeBuddy(int i){
+        if (i >= 0 && i < buddies.size()){
+            return buddies.remove(i);
+        }
+        return null;
     }
     public static void main(String[] args){
         BuddyInfo buddy = new BuddyInfo("Tom", "Carleton", "613");
         AddressBook addressBook = new AddressBook();
         addressBook.addBuddy(buddy);
-        addressBook.removeBuddy(buddy);
+        addressBook.removeBuddy(0);
+    }
+    //a quick helper method
+    public int size() {
+        return myBuddies.size();
     }
 }
